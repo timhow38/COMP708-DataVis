@@ -173,7 +173,7 @@ var padding = 4;
       trigger: 'manual',
       html: true,
       content: function() {
-        return "Assessment ID: " + d.objectName + "</br>Risk Category 1: " + d.riskCategory1 + "</br>Risk Category 2: " + d.riskCategory2;
+        return "Assessment ID: " + d.objectName + "</br>Data Category 1: " + d.riskCategory1 + "</br>Data Category 2: " + d.riskCategory2;
       }
     });
     $(this).popover('show');
