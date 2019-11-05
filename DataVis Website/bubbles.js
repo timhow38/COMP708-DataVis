@@ -10,10 +10,7 @@ d3.select("#bubbleChart").append("svg")
 //Set Start Values
 changeYear('2015');
 
-//Label 
-$("label.cycleBtn").click(function() {
-	changeYear(this.id);
-	});
+
 
 //Change Data CSV
 function changeYear(year){
@@ -106,7 +103,7 @@ var padding = 4;
  
   draw('reset');
  
- $("label.ratingBtn").click(function() {
+ $("button.ratingBtn").click(function() {
    	draw(this.id);
 	});
   
