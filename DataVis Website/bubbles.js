@@ -8,24 +8,27 @@ d3.select("#bubbleChart").append("svg")
 	.attr("id", "primarySVG");
 
 //Set Start Values
-changeYear('2015');
+changeYear('');
 
 
 
 //Change Data CSV
 function changeYear(year){
 	var CSV2015 = 'bubbleChart2015.csv';
-	var CSV2014 = 'bubbleChart2014.csv';
+  var CSV2014 = 'bubbleChart2014.csv';
+  var CSVFactData = 'factData.csv';
 	if (year === '2015'){
 		var dataSource = CSV2015;
-	} else {
+	} else if (year == '2014') {
 		var dataSource = CSV2014;
-	}
+	} else {
+    var dataSource = CSVFactData;
+  }
 
 
 d3.csv(dataSource, function(error, data)
 {
-  data.sort(function(a,b) {return b.ratingClassValue - a.ratingClassValue;
+  data.sort(function(a,b) {return b.categoryID - a.categoryID;
 });
 
 var svg = d3.select("#primarySVG");
@@ -34,7 +37,7 @@ var svg = d3.select("#primarySVG");
  
 //set bubble padding
 var padding = 4;
- 
+
   for (var j = 0; j < data.length; j++) {
     data[j].radius = 10;
     data[j].x = Math.random() * width;
@@ -65,7 +68,7 @@ var padding = 4;
   nodes.enter().append("circle")
     //.attr("class", "node")
      .attr("class", function(d) {
-      return d.ratingCategory;
+      return d.categoryName;
     })
     .attr("cx", function(d) {
       return d.x;
@@ -170,7 +173,7 @@ var padding = 4;
       trigger: 'manual',
       html: true,
       content: function() {
-        return "Assessment ID: " + d.objectName + "</br>Data Category 1: " + d.riskCategory1 + "</br>Data Category 2: " + d.riskCategory2;
+        return "Faction Name: " + d.FactData__factName + "</br>Category: " + d.ratingCategory + "</br>" + d.FactData__factLink;
       }
     });
     $(this).popover('show');
