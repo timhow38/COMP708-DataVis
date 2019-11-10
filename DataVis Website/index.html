@@ -23,41 +23,45 @@
     <div id="header">
 
       <div id="charts">
-        <h2>Faction Mapper</h2>
+       
         <div id="bubbleContainer">
           <!-- Top navigation -->
+          
+          <div id="bubbleChart">
+          </div>
           <div class="topnav">
 
             <!-- Centered link -->
             <div class="topnav-centered">
-				<a>
-				<button class="btn active ratingBtn" id="reset">
-				<input type="radio" name="options">Reset</button>
-				</a>
+              <h2>Faction Mapper</h2>
             </div>
-
             <!-- Left-aligned links (default) -->
             <a>
-			<button class="btn ratingBtn" id="riskCategory1">
-			<input type="radio" name="options">Data Category 1</button>
-			</a>
+              <button class="btn ratingBtn" id="riskCategory1">
+              <input type="radio" name="options">Data Category 1</button>
+            </a>
             <a>
-			<button class="btn ratingBtn" id="riskCategory2">
-			<input type="radio" name="options">Data Category 2</button>
-			</a>
+              <button class="btn active ratingBtn" id="reset">
+              <input type="radio" name="options">Reset</button>
+            </a>
+           
 
             <!-- Right-aligned links -->
             <div class="topnav-right">
             <a>
 			<button class="btn ratingBtn" id="ratingCategory">
 			<input type="radio" name="options">Both Categories</button>
-			</a>
-            <a href="#about">About</a>
+      </a>
+      <a>
+        <button class="btn ratingBtn" id="riskCategory2">
+        <input type="radio" name="options">Data Category 2</button>
+        </a>
+         
             </div>
 
           </div>
-          <div id="bubbleChart">
-          </div>
+
+
         </div>
       </div>
 

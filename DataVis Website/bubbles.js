@@ -1,5 +1,5 @@
 //Canvas Properties
-var width = 960,height = 630;
+var width = 1000,height = 775;
 
 //D3 Canvas Settings
 d3.select("#bubbleChart").append("svg")
@@ -8,12 +8,12 @@ d3.select("#bubbleChart").append("svg")
 	.attr("id", "primarySVG");
 
 //Set Start Values
-changeYear('');
+changeData('');
 
 
 
 //Change Data CSV
-function changeYear(year){
+function changeData(year){
 	var CSV2015 = 'bubbleChart2015.csv';
   var CSV2014 = 'bubbleChart2014.csv';
   var CSVFactData = 'factData.csv';
