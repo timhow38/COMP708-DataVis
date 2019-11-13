@@ -1,6 +1,7 @@
 //Canvas Properties
 var width = 1000,
   height = 770;
+  var name = "";
 
 //D3 Canvas Settings
 d3
@@ -57,6 +58,21 @@ function changeData() {
       //.attr("class", "node")
       .attr("class", function(d) {
         return d.ratingCategory;
+      })
+      .attr("factionName", function(d) {
+        return d.FactData__factName;
+      })
+      .attr("category", function(d) {
+        return d.ratingCategory;
+      })
+      .attr("description", function(d) {
+        return d.FactData__factDesc;
+      })
+      .attr("link", function(d) {
+        return d.FactData__factLink;
+      })
+      .attr("population", function(d) {
+        return d.riskCategory2;
       })
       .attr("cx", function(d) {
         return d.x;
@@ -285,9 +301,11 @@ function changeData() {
 
     function makeClickable() {
       $("circle").click(function() {
-        //document.getElementById("factionName").innerHTML = this.name;
-        var filterName = $(this).data('ratingCategory');
-        console.log(filterName);
+        document.getElementById("factionName").innerHTML = d3.select(this).attr("factionName");
+        document.getElementById("category").innerHTML = d3.select(this).attr("category");
+        document.getElementById("description").innerHTML = d3.select(this).attr("description");
+        document.getElementById("link").innerHTML = d3.select(this).attr("link");
+        document.getElementById("population").innerHTML = d3.select(this).attr("population");
       });
 
       var nest = d3
