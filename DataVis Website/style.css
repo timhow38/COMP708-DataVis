@@ -38,7 +38,7 @@ p{
 font-family: 'Josefin Sans', sans-serif;
 font-size:22;
 font-style:none;
-color:#000000;
+color:#ffffff;
 }
 
 table {
@@ -72,7 +72,6 @@ min-height:60px;
 height:auto;
 }
 
-
 #bubbleContainer{
 height: 850px;
 border: 5px solid #333;
@@ -83,6 +82,27 @@ background: #000000ab;
 -webkit-box-shadow: inset 0px 0px 16px 0px rgba(214,0,0,1);
 -moz-box-shadow: inset 0px 0px 16px 0px rgba(214,0,0,1);
 box-shadow: inset 0px 0px 16px 0px rgba(214,0,0,1);
+vertical-align: left;
+}
+
+#infoContainer{
+height: 850px;
+border: 5px solid #333;
+border-radius: 15px;
+margin-top: 35px;
+text-align: center;
+background: #000000ab;
+-webkit-box-shadow: inset 0px 0px 16px 0px rgba(214,0,0,1);
+-moz-box-shadow: inset 0px 0px 16px 0px rgba(214,0,0,1);
+box-shadow: inset 0px 0px 16px 0px rgba(214,0,0,1);
+vertical-align: right;
+}
+
+#charts {
+	display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: ". .";
 }
 
 #bubbleChart{

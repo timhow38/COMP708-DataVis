@@ -56,7 +56,7 @@ function changeData() {
       .append("circle")
       //.attr("class", "node")
       .attr("class", function(d) {
-        return d.categoryName;
+        return d.ratingCategory;
       })
       .attr("cx", function(d) {
         return d.x;
@@ -98,7 +98,7 @@ function changeData() {
       draw(this.id);
     });
 
-    function draw(varname) {
+    function draw(varname, d) {
       d3.selectAll("circle").attr("r", 10);
       var centers = getCenters(varname, [width, height]);
       force.on("tick", tick(centers, varname));
@@ -181,6 +181,10 @@ function changeData() {
         }
       });
       $(this).popover("show");
+    }
+
+    function getData(d) {
+      return d.FactData__factLink;
     }
 
     function collide(alpha) {
@@ -281,13 +285,15 @@ function changeData() {
 
     function makeClickable() {
       $("circle").click(function() {
-        console.log(this.id);
+        //document.getElementById("factionName").innerHTML = this.name;
+        var filterName = $(this).data('ratingCategory');
+        console.log(filterName);
       });
 
       var nest = d3
         .nest()
         .key(function(d) {
-          return d.objectName;
+          return d.class;
         })
         .entries(data);
     }
