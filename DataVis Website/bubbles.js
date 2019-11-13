@@ -59,6 +59,7 @@ function changeData() {
       .attr("class", function(d) {
         return d.ratingCategory;
       })
+      //Attributes take data from table for future use
       .attr("factionName", function(d) {
         return d.FactData__factName;
       })
@@ -187,6 +188,7 @@ function changeData() {
         html: true,
         content: function() {
           return (
+            //Show data from table for popup
             "<strong>Faction Name:</strong> " +
             d.FactData__factName +
             "</br><strong>Category:</strong> " +
@@ -299,6 +301,7 @@ function changeData() {
       .attr("stop-color", "#FE2E2E")
       .attr("stop-opacity", 1);
 
+    //When clicking on circle, send data to the information container
     function makeClickable() {
       $("circle").click(function() {
         document.getElementById("factionName").innerHTML = d3.select(this).attr("factionName");
