@@ -171,11 +171,11 @@ function changeData() {
         html: true,
         content: function() {
           return (
-            "<strong>Faction Name:</strong> " +
+            "<strong>Faction Name:</strong><a> " +
             d.FactData__factName +
-            "</br><strong>Category:</strong> " +
+            "</a></br><strong>Category:</strong><a> " +
             d.ratingCategory +
-            "</br><strong>Discord:</strong> <u>" +
+            "</a></br><strong>Discord:</strong> <u>" +
             d.FactData__factLink
           );
         }
